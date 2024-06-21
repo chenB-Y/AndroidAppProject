@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Define the border of the checkbox -->
+    <stroke
+        android:width="2dp"
+        android:color="#000" />
+    <!-- Define the background color of the checkbox -->
+    <solid android:color="#FFF" />
+</shape>

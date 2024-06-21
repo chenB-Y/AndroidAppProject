@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/prodcut_list_addProductButton"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="204dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/list_item_myprdouct_fragment_productImage"
+            android:layout_width="84dp"
+            android:layout_height="94dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.473"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/list_item_myprdouct_fragment_productAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/list_item_product_checkbox"
+            app:layout_constraintHorizontal_bias="0.632"
+            app:layout_constraintStart_toEndOf="@+id/list_item_myprdouct_fragment_productImage"
+            app:layout_constraintTop_toBottomOf="@+id/list_item_myprdouct_fragment_productName"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/list_item_myprdouct_fragment_productName"
+            android:layout_width="89dp"
+            android:layout_height="37dp"
+            android:text="name"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/list_item_myprdouct_fragment_productAmount"
+            app:layout_constraintEnd_toStartOf="@+id/list_item_product_checkbox"
+            app:layout_constraintHorizontal_bias="0.672"
+            app:layout_constraintStart_toEndOf="@+id/list_item_myprdouct_fragment_productImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/list_item_product_checkbox"
+            android:layout_width="80dp"
+            android:layout_height="71dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Add Product Button -->
+
+</RelativeLayout>

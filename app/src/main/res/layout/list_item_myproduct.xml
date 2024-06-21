@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/prodcut_list_addProductButton"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="204dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/list_item_myprdouct_fragment_productImage"
+            android:layout_width="84dp"
+            android:layout_height="94dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.192"
+            tools:srcCompat="@tools:sample/avatars" />
+        <ProgressBar
+            android:id="@+id/image_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/list_item_myprdouct_fragment_productImage"
+            app:layout_constraintEnd_toEndOf="@id/list_item_myprdouct_fragment_productImage"
+            app:layout_constraintStart_toStartOf="@id/list_item_myprdouct_fragment_productImage"
+            app:layout_constraintTop_toTopOf="@id/list_item_myprdouct_fragment_productImage" />
+
+        <TextView
+            android:id="@+id/list_item_myprdouct_fragment_productAmount"
+            android:layout_width="120dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="96dp"
+            android:text="TextView"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toEndOf="@+id/list_item_myprdouct_fragment_productImage"
+            app:layout_constraintTop_toBottomOf="@+id/list_item_myprdouct_fragment_productName"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/list_item_myprdouct_fragment_productName"
+            android:layout_width="162dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="96dp"
+            android:text="name"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/list_item_myprdouct_fragment_productAmount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.238"
+            app:layout_constraintStart_toEndOf="@+id/list_item_myprdouct_fragment_productImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/list_item_myprdouct_fragment_deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="176dp"
+            android:text="Delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/list_item_myprdouct_fragment_editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="Edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/list_item_myprdouct_fragment_deleteButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
