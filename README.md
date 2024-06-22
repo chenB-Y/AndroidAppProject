@@ -20,7 +20,7 @@ The Online Shoplist Application is designed to help users create, manage, and sh
 - Google Maps: For displaying product locations on a map.
 - Material Design: For creating a modern and user-friendly UI.
 ## Installation and Setup
-1. Clone the Repository
+1. Clone the Repository <br>
    git clone https://github.com/yourusername/onlineshoplist.git
 2. Open the Project in Android Studio
 
