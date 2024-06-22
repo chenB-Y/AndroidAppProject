@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
     <!-- Profile Photo Frame -->
     <FrameLayout
+        android:id="@+id/profile_photo_frame"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp">
 
         <ImageView
@@ -34,8 +34,10 @@
 
     <!-- Username Input -->
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/profile_photo_frame"
         android:hint="Username"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -48,11 +50,13 @@
 
     <!-- Email Input -->
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/username_input_layout"
+        android:layout_marginTop="8dp"
         android:hint="Email"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginTop="8dp">
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/register_email"
@@ -63,11 +67,13 @@
 
     <!-- Password Input -->
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/email_input_layout"
+        android:layout_marginTop="8dp"
         android:hint="Password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginTop="8dp">
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/register_password"
@@ -81,14 +87,19 @@
         android:id="@+id/register_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_marginTop="16dp" />
+        android:layout_below="@id/password_input_layout"
+        android:layout_marginTop="16dp"
+        android:text="Register" />
 
     <!-- Progress Overlay -->
     <FrameLayout
         android:id="@+id/progress_overlay_register"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:background="#80000000"
         android:visibility="gone">
 
@@ -100,4 +111,4 @@
             android:indeterminate="true" />
     </FrameLayout>
 
-</LinearLayout>
+</RelativeLayout>

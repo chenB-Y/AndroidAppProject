@@ -44,6 +44,7 @@
 
         <!-- Email EditText -->
 
+
         <TextView
             android:id="@+id/Hello_user_textView2"
             android:layout_width="210dp"
@@ -65,29 +66,29 @@
             app:layout_constraintTop_toBottomOf="@+id/change_password_list_toolbar"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <TextView
-            android:id="@+id/edit_profile_email"
-            android:layout_width="73dp"
-            android:layout_height="23dp"
-            android:layout_marginTop="68dp"
-            android:text="Email:"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/edit_profile_emailEditText"
-            app:layout_constraintHorizontal_bias="0.615"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Hello_user_textView2" />
-
         <!-- Save Email Button -->
 
         <!-- Change Password Button -->
 
+        <EditText
+            android:id="@+id/edit_profile_usernameEditText"
+            android:layout_width="112dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="52dp"
+            android:text="UserName:"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/edit_profile_userNameEditText"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Hello_user_textView2" />
+
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/edit_profile_saveEmail"
+            android:id="@+id/edit_profile_saveUserName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="296dp"
-            android:text="Save Email"
+            android:text="Save userName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +102,7 @@
             android:text="Change Password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_profile_saveEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_profile_saveUserName" />
 
         <!-- Profile ImageView -->
 
@@ -164,12 +165,12 @@
         </FrameLayout>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_profile_emailEditText"
-            android:layout_width="296dp"
-            android:layout_height="55dp"
-            android:hint="Enter email"
+            android:id="@+id/edit_profile_userNameEditText"
+            android:layout_width="247dp"
+            android:layout_height="41dp"
+            android:hint="Enter Username"
             android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/edit_profile_saveEmail"
+            app:layout_constraintBottom_toTopOf="@+id/edit_profile_saveUserName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Current_prophile_imageView2"
             app:layout_constraintVertical_bias="0.428" />

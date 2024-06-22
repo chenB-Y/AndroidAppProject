@@ -102,8 +102,11 @@ public class ProductListFragment extends Fragment implements ProductAdapter.OnPe
     private void setupNavigationView() {
         navigationView.setNavigationItemSelectedListener(item -> {
             int hamburgerButton = item.getItemId();
-            if (hamburgerButton == R.id.menu_item1)
+            if (hamburgerButton == R.id.menu_item1) {
+                Navigation.findNavController(requireView()).navigate(R.id.action_productListFragment_self);
                 drawerLayout.closeDrawers();
+
+            }
             if (hamburgerButton == R.id.menu_item2)
                 navigateToAddProduct();
             if (hamburgerButton == R.id.menu_item3)

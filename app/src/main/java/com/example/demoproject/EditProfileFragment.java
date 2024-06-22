@@ -21,7 +21,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,8 +45,8 @@ import java.io.IOException;
 
 public class EditProfileFragment extends Fragment {
 
-    private EditText email;
-    private Button saveEmail;
+    private EditText username;
+    private Button saveUsername;
     private ImageView back;
     private Button changePassword;
     private Button saveImageButton;
@@ -66,8 +65,8 @@ public class EditProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_edit_profile, container, false);
-        email = view.findViewById(R.id.edit_profile_emailEditText);
-        saveEmail = view.findViewById(R.id.edit_profile_saveEmail);
+        username = view.findViewById(R.id.edit_profile_userNameEditText);
+        saveUsername = view.findViewById(R.id.edit_profile_saveUserName);
         back = view.findViewById(R.id.edit_profile_backButton);
         changePassword = view.findViewById(R.id.edit_profile_changePassword);
         helloUserTextView = view.findViewById(R.id.Hello_user_textView2);
@@ -77,9 +76,6 @@ public class EditProfileFragment extends Fragment {
         progressOverlay = view.findViewById(R.id.progress_overlay);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
-        String emailId = user.getEmail().toString();
-        email.setText(emailId);
-        String currentEmail = email.getText().toString();
 
         showProgressOverlay();
         getUserInfo();
@@ -101,7 +97,7 @@ public class EditProfileFragment extends Fragment {
                 showImageSelectionDialog();
             }
         });
-        saveEmail.setOnClickListener(new View.OnClickListener() {
+        saveUsername.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showPasswordInputDialog();
@@ -345,24 +341,27 @@ public class EditProfileFragment extends Fragment {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     // Re-authentication successful, update email
-                    String newEmail = email.getText().toString();
-                    user.updateEmail(newEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                // Email updated successfully
-                                hideProgressOverlay();
-                                Log.d("EditProfileFragment", "Email updated successfully!");
-                                Toast.makeText(requireContext(), "Email updated successfully!", Toast.LENGTH_SHORT).show();
-                            } else {
-                                // Failed to update email
-                                Exception error = task.getException();
-                                hideProgressOverlay();
-                                Log.e("EditProfileFragment", "Error updating email", error);
-                                Toast.makeText(requireContext(), "Error updating email: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+                    String newUsername  = username.getText().toString();
+                    db.collection("users").document(user.getUid())
+                            .update("username", newUsername)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        // Username updated successfully
+                                        hideProgressOverlay();
+                                        Log.d("EditProfileFragment", "Username updated successfully!");
+                                        Toast.makeText(requireContext(), "Username updated successfully!", Toast.LENGTH_SHORT).show();
+                                        helloUserTextView.setText("Hello, " + newUsername);
+                                    } else {
+                                        // Failed to update username
+                                        Exception error = task.getException();
+                                        hideProgressOverlay();
+                                        Log.e("EditProfileFragment", "Error updating username", error);
+                                        Toast.makeText(requireContext(), "Error updating username: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
                 } else {
                     // Re-authentication failed
                     Exception error = task.getException();

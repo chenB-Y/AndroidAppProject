@@ -205,16 +205,25 @@ public class RegisterFragment extends Fragment {
 
         if (TextUtils.isEmpty(email)) {
             editTextEmail.setError("Email is required");
+            hideProgressOverlay();
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
             editTextPassword.setError("Password is required");
+            hideProgressOverlay();
             return;
         }
 
         if (TextUtils.isEmpty(username)) {
             editTextUserName.setError("Username is required");
+            hideProgressOverlay();
+            return;
+        }
+
+        if (photoUri == null) {
+            Toast.makeText(getActivity(), "Profile picture is required", Toast.LENGTH_SHORT).show();
+            hideProgressOverlay();
             return;
         }
 
@@ -305,7 +314,6 @@ public class RegisterFragment extends Fragment {
                 });
     }
 
-
     private void showProgressOverlay() {
         progressOverlayRegister.setVisibility(View.VISIBLE);
     }
@@ -313,6 +321,5 @@ public class RegisterFragment extends Fragment {
     private void hideProgressOverlay() {
         progressOverlayRegister.setVisibility(View.GONE);
     }
-
 
 }
