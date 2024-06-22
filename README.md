@@ -1,4 +1,5 @@
 # Online Shoplist Application
+
 ## Introduction
 The Online Shoplist Application is designed to help users create, manage, and share shopping lists. Users can add items to their lists, and mark them as purchased. The application also allows users to search for recipes using the Ninja API, making meal planning easier and more efficient.
 
@@ -17,7 +18,7 @@ The Online Shoplist Application is designed to help users create, manage, and sh
 - Firebase Storage: For storing product images.
 - Retrofit: For API calls to the Ninja API.
 - RecyclerView: For displaying lists of products and recipes.
-- Google Maps: For displaying product locations on a map.
+- Maps: For displaying product locations on a map using osmdroid - open street map.
 - Material Design: For creating a modern and user-friendly UI.
 ## Installation and Setup
 1. Clone the Repository <br>
