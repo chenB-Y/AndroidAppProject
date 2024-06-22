@@ -2,6 +2,8 @@
 ## Introduction
 The Online Shoplist Application is designed to help users create, manage, and share shopping lists. Users can add items to their lists, and mark them as purchased. The application also allows users to search for recipes using the Ninja API, making meal planning easier and more efficient.
 
+![image](https://github.com/chenB-Y/AndroidAppProject/assets/129218828/4ba54224-2e5a-40cd-85b3-5535d42cc083)
+
 ## Features
 - User Authentication: Users can register and log in to their accounts.
 - Group Management: Users can be part of multiple groups and share shopping lists within the group.
